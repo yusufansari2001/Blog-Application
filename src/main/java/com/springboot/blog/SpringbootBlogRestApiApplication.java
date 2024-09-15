@@ -22,6 +22,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 				)
 				
 		),
+		//branch1 merging to main practise
 		externalDocs=@ExternalDocumentation(
 				description="spring boot blog app documentation",
 				url="https://github.com/yusufansari2001/Blog-Application"
