@@ -2,30 +2,45 @@ package com.springboot.blog.payload;
 
 import java.util.Set;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
-
+@Schema(
+      description = "PostDto Model Information"
+)
 public class PostDto {
 	private long id;
 	
+	@Schema(
+            description = "Blog Post Title"
+    )
 	// title should not be null  or empty
     // title should have at least 2 characters
 	@NotEmpty
 	@Size(min=2,message="the minimum size f title should be 2")
     private String title;
 	
+	 @Schema(
+	            description = "Blog Post Description"
+	    )
 	// title should not be null  or empty
     // title should have at least 2 characters
 	@NotEmpty
 	@Size(min=10,message="the minimum size of description should be 10")
     private String description;
 	
+	 @Schema(
+	            description = "Blog Post Content"
+	    )
 	@NotEmpty
     private String content;
     private Set<CommentDto>comments;
     
+    @Schema(
+            description = "Blog Post Category"
+    )
     private long categoryId;
     
 	public PostDto(long id, String title, String description, String content, Set<CommentDto> comments,long categoryId) {
